@@ -124,7 +124,6 @@ exports.edit = async (req, res) => {
             msg: "Hubo un error con la actualización del lugar",
             error: error
         })
-        console.log(error)
     }
 }
 
