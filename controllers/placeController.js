@@ -39,7 +39,6 @@ exports.create = async (req, res) => {
             msg: "Hubo un error creando el lugar",
             error: error
         })
-        console.log(error)
     }
 }
 
@@ -116,7 +115,7 @@ exports.edit = async (req, res) => {
         )
         res.json({
             msg: "Lugar actualizado con éxito",
-            data: updatedGuitar
+            data: updatedPlace
         })
 
     } catch (error) {
@@ -125,6 +124,7 @@ exports.edit = async (req, res) => {
             msg: "Hubo un error con la actualización del lugar",
             error: error
         })
+        console.log(error)
     }
 }
 
