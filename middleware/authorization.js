@@ -15,7 +15,7 @@ const decrypt = async (req, res, next) => {
         })
     }
 
-    // So hay token y todo bien...
+    // Si hay token y todo bien...
     try {
         const openToken = await jwt.verify(token, process.env.SECRET)
 
