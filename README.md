@@ -1,4 +1,4 @@
-# Backend de la Aplicación
+# Backend de la Aplicación 🚀 Tsukino Travels 🚀
 
 Posterior haber iniciado el proyecto se instalan las dependencias de:
 * bcryptjs
@@ -11,15 +11,15 @@ Posterior haber iniciado el proyecto se instalan las dependencias de:
 En este Backend podemos encontrar el CRUD (Create, Read, Update y Delete) de los modelos.
 
 Contamos con los modelos de:
-* Usuarios (User).
-* Ciudades (Country).
-* Lugares para visitar (Place).
+* Usuarios (User) 👤
+* Ciudades (Country) 🌇
+* Lugares para visitar (Place) 🏞
 
 Iniciamos creando el "Index.js" que es donde se hace la conexión a la base de datos de MongoDB, en la cual utilizaremos la base de Producción, así mismo se crea la conexión al servidor, se establecen los Middlewares y se inician las rutas. 
 
 Posteriormente en la carpeta de "routes" creamos las rutas para el CRUD de cada uno de los modelos, que tendrán sus controllers en la carpeta de "controllers".
 
-## Modelo Usuario - User.
+## 👤 Modelo Usuario - User. 👤
 
 Cuenta con las propiedades de:
 
@@ -44,7 +44,7 @@ Para la sesión se obtiene el email y el password del formulario por medio del "
 Se usó un try/catch para encontrar el ID del usuario loggeado en la base de datos.
 Usa la autorización de "jsonwebtoken" para capturar el token, guardarlo en una variable, si hay token permite al usuario seguir, si no hay no puede seguir viendo la página.
 
-## Modelo de Country - País.
+## 🌇 Modelo de Country - País 🌇
 
 Cuenta con las propiedades de:
 
@@ -58,9 +58,15 @@ Cuenta con las propiedades de:
 * Image - String,
 * Timestamps - Para saber cuando se creó el país.
 
-Este modelo tiene tres rutas:
+Este modelo tiene dos rutas únicamente, ya que nuestra aplicación solo abarca, por el momento los países de Europa, estos ya están en una base de datos, por lo que ya no será necesario la creación, edición o borrado de países.
 
-## Modelo de Places - Lugares.
+Sin embargo cuenta con la ruta de: 
+
+* Lectura de todos los países. La cual se obtiene con un try/catch y una función asíncrona, mediante el método Find.
+
+* Lectura de un país. Obteniendo la id del país seleccionado, igualmente con un try/catch, con una función asíncrona, mediante el método FindById.
+
+## 🏞 Modelo de Places - Lugares 🏞
 
 Cuenta con las propiedades de:
 
@@ -74,4 +80,29 @@ Cuenta con las propiedades de:
 * Map - String,
 * Timestamps - Para saber cuando se creó el lugar.
 
-Este modelo tiene tres rutas:
+Este modelo tiene cinco rutas. Nuestros usuarios podrán crear un lugar, editarlo, borrarlo, así como ver todos los de la base de datos y uno solo seleccionado.
+
+* Creación de un lugar. Obteniendo los datos de un formulario, con un try/catch va a crear el lugar nuevo.
+
+* Lectura de todos los lugares. Con un try/catch se obtiene los datos con el método Find.
+
+* Lectura de un lugar. Obteniendo el id del lugar, con un try/catch se obtiene el dato con el método FindById.
+
+* Editar un lugar. Obteniendo los datos de un formulario va a actualizar un lugar con un try/catch y el método de FindByIdAndUpdate.
+
+* Borrar un lugar. Con el id del lugar seleccionado se borra un lugar por medio de un ty/catch y el método de FindByIdAndDelete
+
+## 🛠 Construido con 🛠
+
+* NodeJS
+* JavaScript - Funciones CRUD
+* MongoDB - Base de datos
+* Heroku - Despliegue
+
+## ✒️ Autores ✒️
+### TU Team!
+[Kurai Tsukino](https://github.com/KuraiTsukino) aka Sandra Mena
+
+## Gracias totales
+
+A [Mike Nieva](https://github.com/mikenieva), [K'ohnin](https://github.com/konhin2) y a [Sam](https://github.com/ta-web-mex) por su ayuda y enseñanzas invaluables 🥰
