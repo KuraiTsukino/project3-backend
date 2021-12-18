@@ -115,7 +115,7 @@ exports.login = async (req, res) => {
             payload, 
             process.env.SECRET,
             {
-                expiresIn: 3600000
+                expiresIn: 360000
             },
             (error, token) => {
                 if(error) throw error
@@ -139,5 +139,20 @@ exports.login = async (req, res) => {
 // Verificar usuario con el Token. 
 // La ruta es la que pedirá el token para verificar el usuario desencriptándolo.
 exports.verifyToken = async(req, res) => {
-    
+    try {
+
+        // 1. Buscar el ID del usuario (del token abierto) en la base de datos
+        const foundUser = await User.findById(req.user.id).
+        select ("-password")
+
+        return res.json({
+            msg: "User data found",
+            data: foundUser
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            msg: "There was an error with the user"
+        })
+    }
 }
