@@ -21,7 +21,7 @@ app.use(express.json())
 // 3. Rutas
 //app.use("/countries", require("./routes/countries"))
 //app.use("/places", require("./routes/places"))
-//app.use("/users", require("./routes/users"))
+app.use("/users", require("./routes/users"))
 
 // 4. Servidor
 app.listen(process.env.PORT, () => {

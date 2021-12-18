@@ -10,5 +10,8 @@ const authorization = require("./../middleware/authorization")
 // Crear usuario.
 router.post ("/create", userController.create)
 
+// Iniciar sesión de usuario.
+router.post("/login", userController.login)
+
 // 3. Exportación
 module.exports = router

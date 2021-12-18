@@ -28,7 +28,7 @@ const userSchema = mongoose.Schema ({
         required: [true, 'Password is required']
     },
     imgUrl: String,
-    wishlist: []
+    wishlist: Array,
 },{ timestamps: true },
 )
 
