@@ -1,6 +1,7 @@
 // 1. Importaciones
 const mongoose = require("mongoose")
-const Country = require("./../models/Country")
+//const Country = require("./../models/Country")
+const Place = require("./../models/Place")
 
 require("dotenv").config()
 
@@ -12,14 +13,15 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // 3. Establecer los datos para poblar la base de datos.
 
+
 const countries = [
     {
         name: "Albania",
         flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/640px-Flag_of_Albania.svg.png",
         capital: "Tirana",
-        borders: ["Montenegro", "North Macedonia", "Kosovo", "Greece",],
+        borders: ["Montenegro", "North Macedonia", "Kosovo", "Greece"],
         currency: "Lek",
-        language: ["Albanian"],
+        language: "Albanian",
         airports: ["Tirana International Airport"],
         image: "https://images.rove.me/albania_w1280.jpg"
     },
@@ -29,7 +31,7 @@ const countries = [
         capital: "Andorra la Vella",
         borders: ["France", "Spain"],
         currency: "Euro",
-        language: ["Catalan"],
+        language: "Catalan",
         airports: ["Aeropuerto Andorra La Seu"],
         image: "https://fotos.perfil.com/2021/02/22/trim/1280/720/andorra-1130706.jpg"
     },
@@ -39,7 +41,7 @@ const countries = [
         capital: "Yerevan",
         borders: ["Azerbaijan", "Georgia", "Iran", "Turkey"],
         currency: "Dram",
-        language: ["Armenian"],
+        language: "Armenian",
         airports: ["Zvartnots International Airport"],
         image: "https://www.angels-initiative.com/sites/default/files/news_articles/yerevan.jpg"
     },
@@ -2018,3 +2020,26 @@ const places = [
     },
 
 ]
+
+// 4. Poblar la base de datos.
+/*
+const createCountryDB = async () => {
+    const newCountries = await Country.create(countries)
+    console.log("Base de datos poblada con Países")
+
+    // Cierre de conexión de Mongoose.
+    mongoose.connection.close()
+
+}
+*/
+const createPlaceDB = async () => {
+    const newPlaces = await Place.create(places)
+    console.log("Base de datos poblada con lugares... se logró!!!")
+
+    // Cierre de conexión de Mongoose.
+    mongoose.connection.close()
+
+}
+
+//createCountryDB()
+createPlaceDB()

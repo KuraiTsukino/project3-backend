@@ -6,7 +6,7 @@ const countrySchema = mongoose.Schema({
     name: String,
     flag: String,
     capital: String,
-    borders: [String], 
+    borders: String, 
     currency: String,
     language: String,
     airports: [String],

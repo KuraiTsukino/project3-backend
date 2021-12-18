@@ -19,3 +19,24 @@ exports.readAll = async (req, res) => {
         
     }
 }
+
+exports.readOne = async (req, res) => {
+    
+    const{ id } = req.params
+
+    try {
+        const country = await Country.findById(id)
+
+        res.json({
+            msg: "País obtenido con éxito",
+            data: country
+        })
+
+    } catch (error) {
+        
+        res.status(500).json({
+            msg: "Hubo un error obteniendo los datos",
+            error: error
+        })
+    }
+}

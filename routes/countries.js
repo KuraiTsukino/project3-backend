@@ -7,8 +7,11 @@ const countryController = require("./../controllers/countryController")
 
 // 2. Ruteo. Router
 
-// Leer ciudades.
+// Leer los países.
 router.get("/readall", countryController.readAll)
+
+// Leer un país.
+router.get("/readone/:id", countryController.readOne)
 
 // 3. Exportaciones
 module.exports = router
