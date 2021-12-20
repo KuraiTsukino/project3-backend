@@ -16,5 +16,8 @@ router.post("/login", userController.login)
 // Verificación de usuario.
 router.get("/verifyToken", authorization, userController.verifyToken)
 
+// Actualizar un usuario.
+router.put("/edit/:id", userController.edit)
+
 // 3. Exportación
 module.exports = router

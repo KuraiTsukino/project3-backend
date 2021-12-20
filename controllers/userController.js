@@ -74,6 +74,42 @@ exports.create = async (req, res) => {
     }
 }
 
+exports.edit = async (req, res) => {
+    const { id } = req.params
+
+    // Obteniendo datos del formulario
+    const {
+        firstName,
+        lastName,
+        country,
+        email,
+        imgUrl,
+    } = req.body
+
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            id,
+            {
+                firstName,
+                lastName,
+                country,
+                email,
+                imgUrl
+            },
+            {new:true}
+        )
+        res.json({
+            msg:"Usuario actualizado con éxito",
+            data: updatedUser
+        })
+    } catch (error) {
+        res.status(500).json({
+            msg:"Hubo un error en la actualización del usuario",
+            error: error
+        })
+    }
+}
+
 // Iniciar sesión.
 // Autenticar que la persona pase su email y contraseña, coincidan y se le envía un token.
 exports.login = async (req, res) => {
