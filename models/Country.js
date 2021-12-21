@@ -8,7 +8,7 @@ const countrySchema = mongoose.Schema({
     capital: String,
     borders: String, 
     currency: String,
-    language: String,
+    language: [String],
     airports: [String],
     image: String
 }, {timestamps: true})
