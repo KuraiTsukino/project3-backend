@@ -19,8 +19,6 @@ const decrypt = async (req, res, next) => {
     try {
         const openToken = await jwt.verify(token, process.env.SECRET)
 
-        console.log("openToken", openToken)
-
         req.user = openToken.user
 
         next()
