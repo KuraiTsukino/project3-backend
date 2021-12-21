@@ -1,6 +1,5 @@
 // 1. Importaciones
 const bcryptjs = require("bcryptjs")
-const { JsonWebTokenError } = require("jsonwebtoken")
 const jwt = require("jsonwebtoken")
 
 const User = require("./../models/User")
