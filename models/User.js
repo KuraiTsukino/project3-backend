@@ -27,7 +27,9 @@ const userSchema = mongoose.Schema ({
         type: String,
         required: [true, 'Password is required']
     },
-    imgUrl: String,
+    imgUrl: {
+        type: String,
+        default: "https://cdn-icons-png.flaticon.com/512/1452/1452378.png"},
     wishlist: Array,
 },{ timestamps: true },
 )
