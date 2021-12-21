@@ -1,6 +1,7 @@
 # Backend de la Aplicación 🚀 Tsukino Travels 🚀
 
 Posterior haber iniciado el proyecto se instalan las dependencias de:
+
 * bcryptjs
 * cors
 * dotenv
@@ -95,12 +96,20 @@ Este modelo tiene cinco rutas. Nuestros usuarios podrán crear un lugar, editarl
 ## 🛠 Construido con 🛠
 
 * NodeJS
+* Express
+* Mongoose
 * JavaScript - Funciones CRUD
 * MongoDB - Base de datos
 * Heroku - Despliegue
 
-## ✒️ Autores ✒️
-### TU Team!
+# Dependencias
+
+* bcryptjs
+* cors
+* dotenv
+* jsonwebtoken
+
+## ✒️ Autora ✒️
 [Kurai Tsukino](https://github.com/KuraiTsukino) aka Sandra Mena
 
 ## Gracias totales
